@@ -31,7 +31,7 @@ pipeline{
                 script{
                     echo "building the adocker image..."
                     withCredentials([usernamePassword(credentialsId: 'docker-hub-repo', passwordVariable: 'PASS', usernameVariable: 'USER')]){
-                        sh "docker build -t uds10/demo-app:${IMAGE_NAME}"
+                        sh "docker build -t uds10/demo-app:${IMAGE_NAME} ."
                         sh 'echo $PASS | docker login -u $USER --password-stdin'
                         sh "docker push uds10/demo-app:${IMAGE_NAME}"
                     }
