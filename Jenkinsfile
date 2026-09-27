@@ -23,12 +23,12 @@ pipeline{
                 }
             }
         }
-        stage("build image") {
+        stage("build and push image") {
             steps{
                 script{
                     buildImage 'uds10/demo-app:jma-3.0'
-
-                    
+                    dockerLogin()
+                    dockerPush 'uds10/demo-app:jma-3.0'
                 }
 
             }
