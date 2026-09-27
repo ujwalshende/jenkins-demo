@@ -26,7 +26,7 @@ pipeline{
         stage("build image") {
             steps{
                 script{
-                    buildImage 'uds10/demo-appjma:3.0'
+                    buildImage 'uds10/demo-app:jma-3.0'
 
                     
                 }
