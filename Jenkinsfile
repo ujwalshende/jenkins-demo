@@ -26,7 +26,7 @@ pipeline{
         stage("build image") {
             steps{
                 script{
-                    dockerImage()
+                    buildImage 'uds10/demo-appjma:3.0'
 
                     
                 }
